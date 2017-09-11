@@ -1,0 +1,25 @@
+{
+  "name": "ali-msg",
+  "version": "0.0.1",
+  "description": "Aliyun SMS Node.js SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/exrobbie/ali-msg.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/exrobbie/ali-msg/issues"
+  },
+  "homepage": "https://github.com/exrobbie/ali-msg#readme",
+  "dependencies": {
+    "urllib": ">=0.5.2"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
