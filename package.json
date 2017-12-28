@@ -1,6 +1,6 @@
 {
   "name": "ali-msg",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Aliyun SMS Node.js SDK",
   "main": "topClient.js",
   "scripts": {
