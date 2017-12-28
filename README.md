@@ -9,15 +9,20 @@ npm i ali-msg
 
 ## Usage
 
+1. 创建 client 实例
 ```javascript
-TopClient = require( './topClient' ).TopClient;
-var client = new TopClient({
+const TopClient = require( './topClient' );
+const client = new TopClient({
      'appkey' : 'appkey' ,
-     'appsecret' : 'secret' ,
-     'REST_URL' : ' http://gw.api.taobao.com/router/rest '
+     'appsecret' : 'secret'
 });
+```
  
-client.execute( 'alibaba.aliqin.fc.sms.num.send' , {
+2. 选项
+
+- 短信发送
+```
+client.send({
      'extend' : '' ,
      'sms_type' : 'normal' ,
      'sms_free_sign_name' : '' ,
@@ -29,3 +34,35 @@ client.execute( 'alibaba.aliqin.fc.sms.num.send' , {
      else console.log(error);
 });
 ```
+
+- 发送记录查询
+``` 
+client.query({
+     'biz_id' , '1234^1234' ,
+     'rec_num' , '13000000000' ,
+     'query_date' , '20151215' ,
+     'current_page' , '1' ,
+     'page_size' , '10'
+}, function(error, response) {
+     if (!error) console.log(response);
+     else console.log(error);
+})
+```
+
+- 文本转语音
+```
+client.call({
+     'extend' , '' ,
+     'tts_param' , '' ,
+     'called_num' , '13700000000' ,
+     'called_show_num' , '40012341234' ,
+     'tts_code' , 'TTS_1234123'
+}, function(error, response) {
+     if (!error) console.log(response);
+     else console.log(error);
+})
+```
+
+## TODO
+
+1. callback改为promise实现

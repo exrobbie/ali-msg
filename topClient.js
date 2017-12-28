@@ -170,4 +170,19 @@ TopClient.prototype.execute = function (apiname,params, callback) {
     this.invoke(apiname, params, [util.getApiResponseName(apiname)], null, 'POST', callback);
 };
 
-exports.TopClient = TopClient;
+//短信发送
+TopClient.prototype.send = function(params,callback){
+    this.invoke('alibaba.aliqin.fc.sms.num.send', params, [util.getApiResponseName(apiname)], null, 'POST', callback);
+}
+
+//发送记录查询
+TopClient.prototype.query = function(params, callback){
+    this.invoke('alibaba.aliqin.fc.sms.num.query', params, [util.getApiResponseName(apiname)], null, 'POST', callback)
+}
+
+//文本转语音
+TopClient.prototype.call = function(params, callback){
+    this.invoke('alibaba.aliqin.fc.tts.num.singlecall', params, [util.getApiResponseName(apiname)], null, 'POST', callback)
+}
+
+module.exports = TopClient;
