@@ -11,7 +11,7 @@ npm i -S ali-msg
 
 1. 创建 client 实例
 ```javascript
-const TopClient = require( './topClient' );
+const TopClient = require( 'ali-msg' );
 const client = new TopClient({
      'appkey' : 'appkey' ,
      'appsecret' : 'secret'
